@@ -1,0 +1,59 @@
+.postTitle {
+  font-size: 25px;
+}
+
+.postContent {
+  margin: 5px;
+}
+
+.Contaner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #00324E;
+}
+
+.Contaner .PostListContainer {
+  width: 650px;
+  background-color: #fff;
+}
+
+.LoadingItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.LoadingItem .LoadingItemContent {
+  width: 85%;
+  padding: 20px;
+}
+
+.LoadingItem .LoadingItemContent div {
+  background-color: #eee;
+  height: 15px;
+  margin: 5px;
+}
+
+.LoadingItem .LoadingItemContent div:nth-child(1) {
+  width: 40%;
+}
+
+.LoadingItem .LoadingItemContent div:nth-child(2) {
+  width: 80%;
+}
+
+.LoadingItem .LoadingItemContent div:nth-child(3) {
+  width: 50%;
+}
+
+.LoadingItem .LoadingItemContent div:nth-child(4) {
+  width: 60%;
+}
+/*# sourceMappingURL=PostList.css.map */

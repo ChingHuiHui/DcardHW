@@ -1,0 +1,126 @@
+@charset "UTF-8";
+.linkStyle {
+  text-decoration: none;
+  color: #000;
+}
+
+.postItem {
+  padding: 10px 60px;
+  cursor: pointer;
+}
+
+.dataContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.dataContainer .avatar, .dataContainer .F {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #f48fb1;
+  margin-right: 10px;
+}
+
+.dataContainer .avatar, .dataContainer .M {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #81d4fa;
+  margin-right: 10px;
+}
+
+.dataContainer .dataText {
+  color: #515151;
+  font-size: 14px;
+}
+
+.dataContainer .dataText span {
+  margin: 0 2px;
+}
+
+.dataContainer .dot:after {
+  content: "·";
+  padding: 0px 0.5em;
+}
+
+.dataContainer .fa-ellipsis-v {
+  position: absolute;
+  right: 0;
+  color: #ccc;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.contentContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.contentContainer .titleContainer {
+  width: 80%;
+}
+
+.contentContainer .titleContainer h3 {
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+.contentContainer .titleContainer .description {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  margin: 0;
+  font-size: 14px;
+  color: #545454;
+}
+
+.contentContainer .titleContainer .commentContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contentContainer .titleContainer .commentContainer p {
+  margin-right: 20px;
+  font-size: 14px;
+  color: #ccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contentContainer .titleContainer .commentContainer p img {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.contentContainer .titleContainer .commentContainer p .fas {
+  margin-right: 5px;
+}
+/*# sourceMappingURL=PostItem.css.map */
