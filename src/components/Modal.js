@@ -53,14 +53,14 @@ const styles ={
         position: 'fixed',
         left:0,
         top:0,
-        backgroundColor: '#001927',
         display:'flex',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        backgroundColor: '#001927',
     },
     modalInner:{
+        height: '100%',
         width: 650,
         padding: '20px 50px',
-        height: '100%',
         overflow: 'auto',
         backgroundColor: '#fff'
     }

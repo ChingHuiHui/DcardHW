@@ -9,7 +9,7 @@ import './css/PostList.css'
 class PostList extends React.Component{
     
       state={
-            id:'', //存放此次的最後1個資料id抓出(為了待會抓後15個資料)
+            id:'', //存放此次的最後1筆資料id(為了待會抓後15個資料)
             before:'', 
             items:[], //所有文章的內容
             post:[], //單一文章內容
@@ -25,7 +25,7 @@ class PostList extends React.Component{
         })
     }
 
-    //如果有參數有id(有點擊postItem)且和上次所傳的參數不同就抓取單一文章api
+    //如果有參數有id(有點擊postItem)且和上次所傳的參數不同就抓取單一(此id)文章api
     componentDidUpdate(prevProps,prevState){
         var link = this.props.match.params.id
         if(prevProps.match.params.id!==link&&link){
@@ -46,7 +46,7 @@ class PostList extends React.Component{
     load = ()=>{
         const {items,before} = this.state
         var url
-        //如果有before表示(scrolling後)要去接往後的資料,沒有則是第一次的前15個
+        //如果有before表示(已經scrolling)要去接往後的資料,沒有則是第一次的前15個
         if(before){
             url=`https://cors-anywhere.herokuapp.com/https://dcard-web-1057.pullup.dcard.io/service/api/v2/posts?popular=true&limit=15&&before=${before}`
         }else{
@@ -55,7 +55,7 @@ class PostList extends React.Component{
         axios.get(url)
         .then(res => {
             this.setState({
-                id : res.data[14].id, //存這次接到的最後一筆資料的id
+                id : res.data[14].id, //存這次接到的最後一筆資料id
                 items: [...items,...res.data], 
                 scrolling: false
               });
@@ -63,7 +63,6 @@ class PostList extends React.Component{
         )
     }
  
-
 
     //判斷是否滾動到最下面，並且loadmore
     handleScroll = (e)=>{ 
@@ -81,7 +80,7 @@ class PostList extends React.Component{
     loadmore = (e)=>{
         this.setState({ 
             scrolling: true,
-            before: this.state.id //設為上一次抓api的最後一筆id
+            before: this.state.id //設定為上一次抓api的最後一筆id
         })
         this.load()
     }
@@ -89,23 +88,23 @@ class PostList extends React.Component{
     render(){
         const {isLoading,post,items,scrolling} = this.state
 
-         //當還在loading,Modal內為空白
+         //當還在loading時,Modal內為空白
         if(isLoading){
             return( <Modal close={()=>this.setState({scrolling:false})}></Modal>)
         }
 
-        //當loading完 有參數id且有post內容就return Modal
+        //當loading完 有參數id且有post內容就return Modal(且Modal有內容)
         if(this.props.match.params.id&&post.content){
             var lines = post.content.split(/\n/);
             return(
             <Modal close={()=>this.setState({scrolling:false})}>
                     <p className='postTitle'>{post.title}</p>
-                    {  lines.map((line,index)=><p key={index} className='postContent'>{line}</p>)}
+                    { lines.map((line,index)=><p key={index} className='postContent'>{line}</p>)}
             </Modal>
             )
         }
 
-        //沒有以上條件，表示正在瀏覽list(顯示目前items有的資料(postItem))
+        //沒有以上條件，表示正在瀏覽list(顯示目前items有的資料(以postItem表現))
         return( 
         <div className='Contaner'>
            <div className='PostListContainer'>
