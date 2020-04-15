@@ -1,9 +1,12 @@
 
 另外新增一個React App
 > create-react-app dcardhw
+
 把clone下來的東西丟進去
 另外下載 react-router 和 axios
+
 > npm install react-router-dom
+
 > npm install axios
 
 完成後就可以執行 npm start。
